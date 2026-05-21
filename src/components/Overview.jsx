@@ -27,7 +27,7 @@ export default function Overview() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 px-4 sm:px-8 lg:px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
           {/* The Challenge */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-80px' }} variants={fadeInUp} transition={{ duration: 0.8, delay: 0.1 }} className="glass-card p-8 sm:p-10 lg:p-12">
             <div className="flex items-center gap-3 mb-6">

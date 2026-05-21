@@ -8,7 +8,7 @@ const fadeInUp = {
 export default function Footer() {
   return (
     <footer className="relative border-t border-[rgba(212,163,115,0.08)]">
-      <div className="max-w-6xl mx-auto px-6 sm:px-12 py-20 lg:py-24">
+      <div className="max-w-6xl mx-auto px-12 sm:px-16 lg:px-20 py-20 lg:py-24">
         <motion.div
           initial="hidden"
           whileInView="visible"

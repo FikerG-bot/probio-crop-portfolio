@@ -26,11 +26,10 @@ export default function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${
-        scrolled
-          ? 'bg-[rgba(10,10,9,0.85)] backdrop-blur-xl border-b border-[rgba(212,163,115,0.1)]'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ${scrolled
+        ? 'bg-[rgba(10,10,9,0.85)] backdrop-blur-xl border-b border-[rgba(212,163,115,0.1)]'
+        : 'bg-transparent'
+        }`}
     >
       <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Left — University Mark */}

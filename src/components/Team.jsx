@@ -33,7 +33,7 @@ function AdvisorCard() {
       <motion.div
         whileHover={{ y: -4 }}
         transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-        className="glass-card p-8 sm:p-12 max-w-2xl mx-auto mb-16 mx-4 sm:mx-8 lg:mx-auto"
+        className="glass-card p-8 sm:p-12 max-w-2xl mx-auto mb-12"
         style={{ borderColor: 'rgba(212,163,115,0.25)' }}
       >
         <div className="flex flex-col sm:flex-row items-center gap-6">
@@ -109,7 +109,7 @@ export default function Team() {
 
           <motion.div
             variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 px-4 sm:px-8 lg:px-0"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
           >
             {students.map((student) => (
               <StudentCard key={student.id} student={student} />

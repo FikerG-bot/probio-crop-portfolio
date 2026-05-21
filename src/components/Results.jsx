@@ -158,7 +158,7 @@ export default function Results() {
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
           variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 px-4 sm:px-8 lg:px-0"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10"
         >
           {cards.map((card, i) => (
             <ResultCard key={card.id} card={card} index={i} />

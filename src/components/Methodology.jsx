@@ -58,7 +58,7 @@ function TimelineNode({ step, index }) {
       `}
     >
       {/* Content Card */}
-      <div className={`flex-1 ${isLeft ? 'md:text-right' : 'md:text-left'} text-left md:max-w-[calc(50%-40px)]`}>
+      <div className={`flex-1 ${isLeft ? 'md:text-right' : 'md:text-left'} text-left md:max-w-[calc(50%-60px)]`}>
         <motion.div
           whileHover={{ y: -4, borderColor: 'rgba(212,163,115,0.35)' }}
           transition={{ type: 'spring', stiffness: 200, damping: 20 }}
@@ -107,7 +107,7 @@ function TimelineNode({ step, index }) {
 export default function Methodology() {
   return (
     <section id="methodology" className="section-spacing relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-0">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial="hidden"
           whileInView="visible"

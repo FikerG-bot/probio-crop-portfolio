@@ -27,8 +27,6 @@
    ======================================== */
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -142,16 +140,18 @@ body::before {
    ======================================== */
 
 .section-spacing {
-  padding: 160px 24px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  padding: 120px 48px;
+}
+
+@media (min-width: 1024px) {
+  .section-spacing {
+    padding: 140px 80px;
+  }
 }
 
 @media (max-width: 768px) {
   .section-spacing {
-    padding: 100px 16px;
-    margin-top: 24px;
-    margin-bottom: 24px;
+    padding: 80px 20px;
   }
 }
 
@@ -165,13 +165,11 @@ body::before {
   top: 0;
   bottom: 0;
   width: 1px;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(212, 163, 115, 0.3) 10%,
-    rgba(212, 163, 115, 0.3) 90%,
-    transparent
-  );
+  background: linear-gradient(to bottom,
+      transparent,
+      rgba(212, 163, 115, 0.3) 10%,
+      rgba(212, 163, 115, 0.3) 90%,
+      transparent);
   transform: translateX(-50%);
 }
 
@@ -221,19 +219,45 @@ body::before {
    ======================================== */
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  33% { transform: translateY(-8px) rotate(1deg); }
-  66% { transform: translateY(4px) rotate(-1deg); }
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  33% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+
+  66% {
+    transform: translateY(4px) rotate(-1deg);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.6; }
+
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
 }
 
 @keyframes breathe {
-  0%, 100% { transform: scale(1); opacity: 0.15; }
-  50% { transform: scale(1.05); opacity: 0.25; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.15;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 0.25;
+  }
 }
 
 .animate-breathe {
