@@ -280,7 +280,7 @@ function VideoShowcase() {
           Process Documentation
         </span>
         <h3 className="text-2xl md:text-3xl font-bold text-[#EAE0D5]" style={{ fontFamily: 'var(--font-serif)' }}>
-          Istp group 6 project video lab footage
+          ISTP Group 6 Project Video Lab Footage
         </h3>
       </motion.div>
 
@@ -294,11 +294,11 @@ function VideoShowcase() {
         style={{ borderColor: 'rgba(212,163,115,0.2)' }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-[rgba(212,163,115,0.05)] to-transparent pointer-events-none" />
-        
+
         <div className="relative rounded-2xl overflow-hidden border border-[rgba(212,163,115,0.1)] bg-black aspect-video">
-          <video 
+          <video
             className="w-full h-full object-contain"
-            controls 
+            controls
             preload="metadata"
             controlsList="nodownload"
           >
