@@ -265,6 +265,52 @@ function WorkingMembersGallery() {
   )
 }
 
+function VideoShowcase() {
+  return (
+    <div className="mt-24 lg:mt-32">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        variants={fadeInUp}
+        transition={{ duration: 0.8 }}
+        className="text-center mb-12 lg:mb-16"
+      >
+        <span className="text-xs tracking-[0.3em] uppercase text-[#9E968F] block mb-4" style={{ fontFamily: 'var(--font-mono)' }}>
+          Process Documentation
+        </span>
+        <h3 className="text-2xl md:text-3xl font-bold text-[#EAE0D5]" style={{ fontFamily: 'var(--font-serif)' }}>
+          Istp group 6 project video lab footage
+        </h3>
+      </motion.div>
+
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-60px' }}
+        variants={fadeInUp}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="glass-card p-2 sm:p-4 rounded-[2rem] relative overflow-hidden mx-auto max-w-4xl"
+        style={{ borderColor: 'rgba(212,163,115,0.2)' }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-[rgba(212,163,115,0.05)] to-transparent pointer-events-none" />
+        
+        <div className="relative rounded-2xl overflow-hidden border border-[rgba(212,163,115,0.1)] bg-black aspect-video">
+          <video 
+            className="w-full h-full object-contain"
+            controls 
+            preload="metadata"
+            controlsList="nodownload"
+          >
+            <source src="/video/video_2026-05-22_01-42-26.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </motion.div>
+    </div>
+  )
+}
+
 export default function Results() {
   return (
     <section id="results" className="section-spacing relative">
@@ -297,6 +343,7 @@ export default function Results() {
           ))}
         </motion.div>
 
+        <VideoShowcase />
         <ImageGallery />
         <WorkingMembersGallery />
       </div>
