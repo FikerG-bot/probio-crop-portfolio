@@ -203,11 +203,14 @@ function ImageGallery() {
 
 function WorkingMembersGallery() {
   const images = [
+    '/working/20260518_151842.jpg',
+    '/working/20260518_151941.jpg',
     '/working/IMG_0986.jpg',
     '/working/IMG_0988.jpg',
     '/working/IMG_1016.jpg',
     '/working/IMG_20260520_163412_594.jpg',
     '/working/IMG_20260520_163412_963.jpg',
+    '/working/IMG_20260522_002634_923.jpg',
   ]
 
   return (

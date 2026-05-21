@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import Overview from './components/Overview'
 import Methodology from './components/Methodology'
 import Results from './components/Results'
+import Roles from './components/Roles'
 import Team from './components/Team'
 import Footer from './components/Footer'
 
@@ -38,6 +39,7 @@ export default function App() {
         <Overview />
         <Methodology />
         <Results />
+        <Roles />
         <Team />
       </main>
       <Footer />
