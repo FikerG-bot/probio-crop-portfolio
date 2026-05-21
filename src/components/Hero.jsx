@@ -119,12 +119,26 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex justify-center mb-10"
+          className="flex justify-center mb-6"
         >
           <div className="glow-pill">
             <Sparkles size={14} strokeWidth={1.5} />
             <span>Group 6 • Integrated Science Team Project</span>
           </div>
+        </motion.div>
+
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="flex justify-center mb-8"
+        >
+          <img 
+            src="/logo/logo.jpg" 
+            alt="Group 6 Logo" 
+            className="w-28 h-28 md:w-36 md:h-36 object-cover rounded-[2rem] border border-[rgba(212,163,115,0.2)] shadow-[0_0_40px_rgba(212,163,115,0.15)]"
+          />
         </motion.div>
 
         {/* Main Title */}
