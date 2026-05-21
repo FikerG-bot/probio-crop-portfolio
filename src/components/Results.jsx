@@ -133,6 +133,70 @@ function ResultCard({ card, index }) {
   )
 }
 
+function ImageGallery() {
+  const images = [
+    '/research/photo_1_2026-05-16_11-31-11.jpg',
+    '/research/photo_11_2026-05-16_11-31-11.jpg',
+    '/research/photo_16_2026-05-16_11-31-11.jpg',
+    '/research/photo_17_2026-05-16_11-31-11.jpg',
+    '/research/photo_19_2026-05-16_11-31-11.jpg',
+    '/research/photo_20_2026-05-16_11-31-11.jpg',
+    '/research/photo_2026-05-20_15-36-15.jpg',
+    '/research/photo_2026-05-20_15-36-28.jpg',
+  ]
+
+  return (
+    <div className="mt-24 lg:mt-32">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+        variants={fadeInUp}
+        transition={{ duration: 0.8 }}
+        className="text-center mb-12 lg:mb-16"
+      >
+        <span className="text-xs tracking-[0.3em] uppercase text-[#9E968F] block mb-4" style={{ fontFamily: 'var(--font-mono)' }}>
+          Lab Gallery
+        </span>
+        <h3 className="text-2xl md:text-3xl font-bold text-[#EAE0D5]" style={{ fontFamily: 'var(--font-serif)' }}>
+          Visual Documentation
+        </h3>
+      </motion.div>
+
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-60px' }}
+        variants={staggerContainer}
+        className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6"
+      >
+        {images.map((src, i) => (
+          <motion.div
+            key={i}
+            variants={fadeInUp}
+            whileHover={{ y: -6, scale: 1.02, zIndex: 10, borderColor: 'rgba(212,163,115,0.4)' }}
+            transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+            className="glass-card p-2 aspect-square relative group cursor-pointer flex flex-col"
+          >
+            <div className="w-full h-full relative overflow-hidden rounded-xl bg-[rgba(10,10,9,0.5)]">
+              {/* Earthy tech color overlay that fades on hover */}
+              <div className="absolute inset-0 bg-[#161412]/40 mix-blend-multiply group-hover:opacity-0 transition-opacity duration-500 z-10" />
+              <div className="absolute inset-0 bg-[#D4A373]/10 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10" />
+              
+              <img 
+                src={src} 
+                alt={`Research documentation ${i + 1}`}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[40%] sepia-[20%] group-hover:grayscale-0 group-hover:sepia-0"
+                loading="lazy"
+              />
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  )
+}
+
 export default function Results() {
   return (
     <section id="results" className="section-spacing relative">
@@ -164,6 +228,8 @@ export default function Results() {
             <ResultCard key={card.id} card={card} index={i} />
           ))}
         </motion.div>
+
+        <ImageGallery />
       </div>
     </section>
   )
