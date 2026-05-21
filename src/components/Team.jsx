@@ -17,14 +17,14 @@ const advisor = {
 }
 
 const students = [
-  { name: 'Bitania Geremew', id: 'ETS0330/16' },
-  { name: 'Chala Edosa', id: 'ETS0347/16' },
-  { name: 'Eyob Bizuneh', id: 'ETS0518/16' },
-  { name: 'Eyob Kebede', id: 'ETS0520/16' },
-  { name: 'Fiker Gebeyehu', id: 'ETS0562/16' },
-  { name: 'Filimon Gebru', id: 'ETS0580/16' },
-  { name: 'Hikma Abdela', id: 'ETS0711/16' },
-  { name: 'Hilina Yohanne', id: 'ETS0714/16' },
+  { name: 'Bitania Geremew', id: 'ETS0330/16', image: '/members/bitaniya.jpg' },
+  { name: 'Chala Edosa', id: 'ETS0347/16', image: '/members/chala.jpg' },
+  { name: 'Eyob Bizuneh', id: 'ETS0518/16', image: '/members/eyob-belayneh.jpg' },
+  { name: 'Eyob Kebede', id: 'ETS0520/16', image: '/members/eyob-kebede.jpg' },
+  { name: 'Fiker Gebeyehu', id: 'ETS0562/16', image: '/members/fiker.jpg' },
+  { name: 'Filimon Gebru', id: 'ETS0580/16', image: '/members/filimon.jpg' },
+  { name: 'Hikma Abdela', id: 'ETS0711/16', image: '/members/hikma.jpg' },
+  { name: 'Hilina Yohanne', id: 'ETS0714/16', image: '/members/hilina.jpg' },
 ]
 
 function AdvisorCard() {
@@ -61,11 +61,18 @@ function StudentCard({ student }) {
       <motion.div
         whileHover={{ y: -6, borderColor: 'rgba(212,163,115,0.3)', boxShadow: '0 8px 30px rgba(139,94,60,0.1)' }}
         transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-        className="glass-card p-6 sm:p-8 h-full"
+        className="glass-card p-6 sm:p-8 h-full group"
       >
         <div className="flex items-center gap-4">
-          <div className="w-11 h-11 rounded-xl bg-[rgba(212,163,115,0.06)] border border-[rgba(212,163,115,0.12)] flex items-center justify-center shrink-0">
-            <User size={20} strokeWidth={1.5} className="text-[#9E968F]" />
+          <div className="w-14 h-14 rounded-full bg-[rgba(212,163,115,0.06)] border border-[rgba(212,163,115,0.2)] flex items-center justify-center shrink-0 overflow-hidden relative group-hover:border-[rgba(212,163,115,0.4)] transition-colors duration-300">
+            {student.image ? (
+              <>
+                <div className="absolute inset-0 bg-[#D4A373]/10 mix-blend-overlay z-10" />
+                <img src={student.image} alt={student.name} className="w-full h-full object-cover grayscale-[30%] sepia-[10%] group-hover:grayscale-0 group-hover:sepia-0 transition-all duration-500 group-hover:scale-110" />
+              </>
+            ) : (
+              <User size={20} strokeWidth={1.5} className="text-[#9E968F]" />
+            )}
           </div>
           <div className="min-w-0">
             <h4 className="text-sm font-semibold text-[#EAE0D5] truncate">{student.name}</h4>
