@@ -1,0 +1,245 @@
+@import "tailwindcss";
+
+/* ========================================
+   DESIGN TOKENS — Earthy-Tech Scientific
+   ======================================== */
+
+@theme {
+  /* Color Palette */
+  --color-bg-main: #0A0A09;
+  --color-bg-card: #161412;
+  --color-accent-primary: #D4A373;
+  --color-accent-secondary: #8B5E3C;
+  --color-border: rgba(212, 163, 115, 0.15);
+  --color-border-hover: rgba(212, 163, 115, 0.35);
+  --color-text-primary: #EAE0D5;
+  --color-text-muted: #9E968F;
+  --color-text-heading: #EAE0D5;
+
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+/* ========================================
+   GLOBAL STYLES
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-main);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* SVG Noise/Grain Overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ========================================
+   SCROLLBAR STYLING
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-secondary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-primary);
+}
+
+/* ========================================
+   SELECTION STYLING
+   ======================================== */
+
+::selection {
+  background: rgba(212, 163, 115, 0.3);
+  color: var(--color-text-primary);
+}
+
+/* ========================================
+   GLASS CARD UTILITY
+   ======================================== */
+
+.glass-card {
+  background: rgba(22, 20, 18, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: 0 8px 32px rgba(139, 94, 60, 0.08);
+}
+
+/* ========================================
+   TEXT GRADIENT UTILITY
+   ======================================== */
+
+.text-gradient {
+  background: linear-gradient(135deg, #EAE0D5 0%, #D4A373 60%, #8B5E3C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+   GLOW PILL BADGE
+   ======================================== */
+
+.glow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 100px;
+  background: rgba(212, 163, 115, 0.08);
+  border: 1px solid rgba(212, 163, 115, 0.2);
+  color: var(--color-accent-primary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px rgba(212, 163, 115, 0.06);
+}
+
+/* ========================================
+   SECTION SPACING
+   ======================================== */
+
+.section-spacing {
+  padding: 160px 24px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .section-spacing {
+    padding: 100px 16px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+/* ========================================
+   TIMELINE LINE
+   ======================================== */
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(212, 163, 115, 0.3) 10%,
+    rgba(212, 163, 115, 0.3) 90%,
+    transparent
+  );
+  transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 20px;
+  }
+}
+
+/* ========================================
+   TIMELINE NODE DOT
+   ======================================== */
+
+.timeline-dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-bg-card);
+  border: 2px solid var(--color-accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(212, 163, 115, 0.15);
+}
+
+/* ========================================
+   QUOTE BLOCK
+   ======================================== */
+
+.quote-block {
+  border-left: 3px solid var(--color-accent-primary);
+  padding: 20px 24px;
+  margin-top: 32px;
+  background: rgba(212, 163, 115, 0.04);
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+  color: var(--color-accent-primary);
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(1deg); }
+  66% { transform: translateY(4px) rotate(-1deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.15; }
+  50% { transform: scale(1.05); opacity: 0.25; }
+}
+
+.animate-breathe {
+  animation: breathe 6s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
